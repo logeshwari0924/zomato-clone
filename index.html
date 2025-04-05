@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/title icon.jpg">
+  <title>Zomato</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="demo.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  
+
+  <a class="w-0" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <i style="position: fixed;right: 50px;bottom: 50px; color: white;background-color: red; padding: 10px; border-radius: 5px; cursor: pointer;" class="fa-solid  fa-cart-shopping">
+      <span class="count" style="position: absolute; color: rgb(0, 0, 0); ;top: -5px;right : -3px; position: absolute;">0</span>
+    </i>
+  </a>
+
+  <!-- Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body overflow-x-hidden">
+
+      <!-- <div class="card my-3">
+        <div class="d-flex p-3 align-items-center " style="width: 500px">
+            <div>
+                <img src="images/card img 1.avif" alt="" width="130px">
+            </div>
+            <div class="mx-3">
+                <h5>food name</h5>
+                <h6>price = 100</h6>
+                <button type="button" class="btn btn-outline-success mx-2">Buy</button>
+                <input type="number" style="width: 50px;">
+            </div>
+            <div class="deleteimg mx-4">
+                <img src="images/delete image.png" alt="delete img" style="height: 30px; width: 30px;">
+            </div>
+        </div>
+    </div> -->
+
+   
+      
+    </div>
+    <div class="mb-5 text-center">
+      <p><a href="#" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Total = <span class="total-price">0</span></a></p>
+    </div>
+    <div class="btnicon mb-4 text-center">
+      <button type="button" class="btn btn-outline-danger" onclick='alert("Your Order Placed")'>ORDER</button>
+    </div>
+  </div>
+
+
+<!-- NAVBAR -->
+
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <h1 class="navbar-brand heading">ZOMATO</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Mobile app">Mobile app</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Reviews">Reviews</a>
+          </li>
+        </ul>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Login
+        </button>
+        <!-- <button class="btn btn-outline-success" type="submit">Login</button> -->
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- navbar -->
+
+
+  <!-- model -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">LOGIN FORM</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <br>
+            <label for="name" class="form label">Email id or phone number</label>
+            <input type="text" class="form-control" id="name">
+            </br>
+            <br>
+            <label for="name" class="form-label">password</label>
+            <input type="text" class="form form-control" id="name">
+            </br>
+            <br>
+            <input type="checkbox" class="form check input"><span>Remember me</span>
+            <br>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button">Log in</button>
+
+            </div>
+            <br>
+            <br>
+            <div class="forget1 input-group">
+              <img src="images/google.png" class="input-group-text">
+              <input type="text" class="form-control" placeholder="sing in with google">
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button">Forget Password?</button>
+
+            </div>
+            <br>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- model -->
+
+  <!-- curosel -->
+  <section id="Home">
+    <div class="container">
+      <div id="carouselExampleCaptions" class="carousel slide" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner rounded-4">
+          <div class="carousel-item active">
+            <img src="images/img fd1.jpeg" class="d-block w-100 carouselimg" alt="..." height="500px">
+            <div class="carousel-content position-absolute top-50 start-50 text-center translate-middle">
+              <h5 class="title">ZOMATO</h5>
+              <p>Discover the best food & drinks in Erode.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/img fd11.jpg" class="d-block w-100 carouselimg" alt="..." height="500px">
+            <div class="carousel-content  position-absolute top-50 start-50 text-center translate-middle">
+              <h5 class="title">ZOMATO</h5>
+              <p>Discover the best food & drinks in Erode</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/img fd22.jfif" class="d-block w-100 carouselimg" alt="..." height="500px">
+            <div class="carousel-content  position-absolute top-50 start-50 text-center translate-middle">
+              <h5 class="title">ZOMATO</h5>
+              <p>Discover the best food & drinks in Erode.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- curosel -->
+
+  <!-- cards -->
+
+
+  <div class="moves" id="Menu">
+
+    <div class="sectioncards mt-4">
+      <div class="container">
+        <div class="row g-3">
+          <h1 class="mt-3 mb-4">Inspiration for your first order</h1>
+
+          <!-- <div id="moves"> -->
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card img 1.avif" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Biriyani</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning" id="star1"></i>
+                    <i class="fa-solid fa-star text-warning" id="star2"></i>
+                    <i class="fa-solid fa-star text-warning" id="star3"></i>
+                    <i class="fa-solid fa-star text-warning" id="star4"></i>
+                    <i class="fa-solid fa-star" id="star5"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="rupeeicon d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>210</span></h4>
+                  </span>
+                  <button type="button" class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4 " data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card img2.avif" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Dosa</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>80</span></h4>
+                  </span>
+                  <button type="button" class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card img 4.avif" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Noodels</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>120</span></h4>
+                  </span>
+                  <button type=button class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card n img 4.jpg" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Idly</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>60</span></h4>
+                  </span>
+                  <button type="button" class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/pro img north indian.avif" height="215px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Naan</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>260</span></h4>
+                  </span>
+                  <button type="button" class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card n img 5.jpg" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Curd rice</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>90</span></h4>
+                  </span>
+                  <button type="button" class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card n 6 img.jpg" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Pasta</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>160</span></h4>
+                  </span>
+                  <button type="button" class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card n img 6.jpg" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Veg Meals</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>200</span></h4>
+                  </span>
+                  <button class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-sm-6 col-md-4" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card">
+              <img src="images/card n img 8.jfif" class="card-img-top" alt="..." height="215px">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Fish Gravy</h5>
+                  <div>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star text-warning"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="card-text">Healthy food makes you feel good.Just for the health of it.Nothing tastes as good
+                  as thin feels</p>
+                <div class="d-flex justify-content-between">
+                  <span>
+                    <h4>₹ <span>250</span></h4>
+                  </span>
+                  <button class="btn btn-outline-danger add-cart-btn">
+                    <h5 class="add_symbol">+</h5>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cards -->
+
+    <!-- products -->
+
+    <div class="productsalign mt-3">
+      <div class="container">
+        <h1 class="mb-4">WHAT'S ON YOUR MIND</h1>
+        <div class="align1 d-flex flex-wrap">
+
+
+          <div class="text-center me-4">
+            <img src="images/pro img burgur.avif" alt="burger" height="150px" width="150px">
+            <p>burger</p>
+
+          </div>
+
+          <div class="text-center me-4">
+            <img src="images/pro img biriyani.avif" alt="biryani" height="150px" width="150px">
+            <p>Biryani</p>
+          </div>
+
+          <div class="text-center me-4">
+            <img src="images/pro img cake.avif" alt="CAKE" height="150px" width="150px">
+            <p>Cake</p>
+
+          </div>
+
+          <div class="text-center me-4">
+            <img src="images/pro img chikken.avif" alt="chiken" height="150px" width="150px">
+            <p>Chicken</p>
+          </div>
+
+          <div class="text-center me-4">
+            <img src="images/pro img rools.avif" alt="rools" height="150px" width="150px">
+            <p>Rools</p>
+          </div>
+
+          <div class="text-center me-4">
+            <img src="images/pro img proto.avif" alt="paratha" height="150px" width="150px">
+            <p>Paratha</p>
+          </div>
+
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- products -->
+    </div>
+
+    <!-- mobileapp -->
+    <div class="container" id="Mobile app" data-aos="zoom-in" data-aos-duration="1500">
+      <h1 class="mt-3 mb-4">DOWNLOAD OUR APP NOW</h1>
+      <div class="row d-flex align-items-center">
+        <div class="col-12 col-md-6 mt-3">
+          <img src="images/mb_app_img-removebg-preview.png" class="img-fluid" alt="mobile app ">
+
+        </div>
+
+        <div class="col-12 col-md-6">
+          <h3 class="mb-3">Get the zomato app</h3>
+          <p class="mb-3">We will send you a link, open it on your phone to download the app</p>
+
+          <div class="d-flex mb-3">
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Email
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Phone
+              </label>
+            </div>
+          </div>
+
+          <div class="d-flex mb-3">
+            <input type="email" placeholder="Email" class="form-control w-50">
+            <button class="btn btn-outline-danger">Share App Link </button>
+          </div>
+          <p class="mb-3">Download app from</p>
+
+          <img src="images/gpay img.webp" alt="googlepay" height="50px" width="150px">
+          <img src="images/app img.webp" alt="app" height="50px" width="150px">
+
+
+        </div>
+      </div>
+    </div>
+    <!-- mobileapp -->
+
+
+
+
+
+    <!--question -->
+    <div class="container mt-5" id="Reviews">
+      <h1 class="mb-4">Explore options near me</h1>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <h4>Popular Cuisines Near Me</h4>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> Bakery near me . Beverages near me . Biryani near me . Burger near me . Chinese near me . Desserts
+                near me . Ice Cream near me . Juices near me . Kebab near me . Mughlai near me . North Indian near me .
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h4>Popular Restaurant Types Near me</h4>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> Bakery near me . Beverages near me . Biryani near me . Burger near me . Chinese near me . Desserts
+                near me . Ice Cream near me . Juices near me . Kebab near me . Mughlai near me . North Indian near me .
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <h4>How to order Zomato cancelled order?</h4>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p> With Food Rescue, customers within a 3km radius of a delivery partner carrying a cancelled order will
+                see it appear on their app's home screen, available to “rescue” at a reduced price. </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+              <h4>How to get Zomato refund?</h4>
+            </button>
+          </h2>
+          <div id="collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>To get a refund from Zomato, go to the "Orders" section in the app, select the relevant order, and
+                click on "Support" or "Help." Describe your issue, and submit the request. Zomato's team will review it
+                and process the refund if eligible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- </question>  -->
+
+
+    <!-- last slide -->
+    <div class="container mt-5 mb-5" data-aos="zoom-in" data-aos-duration="1500">
+      <img src="images/slide img.avif" class="img-fluid" alt="slide" height="400px" width="100%">
+    </div>
+    <!-- last slide -->
+
+    <!-- final -->
+    <footer>
+
+      <div class="container">
+        <span class="slidetext">ZOMATO</span>
+        <div class="d-flex flex-wrap mt-3">
+
+          <ul class="list-inline">
+            <li>
+              <h3 class="mb-3 me-5">ABOUT ZOMATO</h3>
+            </li>
+
+            <ul class="slidestyle list-inline">
+              <li>Who we Are</li>
+              <li>Blog</li>
+              <li>Work With Us</li>
+              <li>Contact Us</li>
+              <li>Press Kit</li>
+            </ul>
+          </ul>
+
+          <ul class="list-inline">
+            <li>
+              <h3 class="mb-3 me-5">ZOMAVERSE</h3>
+            </li>
+            <div class="slidestyle list-inline">
+              <li>Zomato</li>
+              <li>Blinkit</li>
+              <li>District</li>
+              <li>Feeding India</li>
+              <li>Hyperpure</li>
+              <li>Zomato Live</li>
+              <li>Zomatoland</li>
+              <li>Weather Union</li>
+            </div>
+          </ul>
+
+
+          <ul class="list-inline">
+            <li>
+              <h3 class="mb-3 me-5">FOR RESTAURANTS</h3>
+            </li>
+
+            <div class="slidestyle list-inline">
+              <li>Partner With Us</li>
+              <li>Apps For You</li>
+            </div>
+          </ul>
+
+
+          <ul class="list-inline">
+            <li>
+              <h3 class="list-inline mb-3 me-5">LEARN MORE</h3>
+            </li>
+
+            <div class="slidestyle">
+              <li>Privacy</li>
+              <li>Security</li>
+              <li>Terms</li>
+            </div>
+          </ul>
+
+          <ul>
+            <button type="button" class="btn btn-outline-danger mb-3"> <img src="images/flag..jpg" alt="" height="15px"
+                width="15px">India </button>
+            <button type="button" class="btn btn-outline-danger mb-3"> <i class="fa-solid fa-globe"></i> English
+            </button>
+
+            <h6 class="mb-3">SOCIAL LINKS</h6>
+
+            <button type="button" class="btn btn-outline-secondary mb-3">
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-instagram"></i>
+            </button>
+            <br>
+
+            <p class="mb-3"><img src="images/gpay img.webp" alt="" height="50px" width="150px"><br></p>
+            <img src="images/app img.webp" alt="" height="50px" width="150px">
+
+            <a href="#" class="rounded-1 btn btn-secondary">
+              <i class="fa-solid fa-arrow-up"></i>
+            </a>
+  
+          </ul>
+         
+
+
+        </div>
+      </div>
+
+    </footer>
+    <!-- final -->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="index.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+
+</html>
